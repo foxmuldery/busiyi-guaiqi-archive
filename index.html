@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>怪奇实录 | 异常档案库</title>
+    <meta
+      name="description"
+      content="《怪奇实录》上线前异常档案库样板。8 份异常记录正在归档中。"
+    />
+    <link rel="preload" href="./assets/archive-bg.png" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <main class="site-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="system-bar">
+          <span>ANOMALY ARCHIVE</span>
+          <span>ACCESS LEVEL: OBSERVER</span>
+          <span id="clock">SYNC --:--:--</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="intro-panel">
+            <p class="eyebrow">UNFINISHED CASE INDEX // 000-008</p>
+            <h1 id="page-title">怪奇实录</h1>
+            <p class="lede">
+              8 份异常记录正在归档中。当前访问已被记录。
+            </p>
+
+            <div class="countdown" aria-label="上线倒计时">
+              <span class="countdown-label">距离档案开启</span>
+              <div class="countdown-grid">
+                <div>
+                  <strong id="days">00</strong>
+                  <span>DAYS</span>
+                </div>
+                <div>
+                  <strong id="hours">00</strong>
+                  <span>HOURS</span>
+                </div>
+                <div>
+                  <strong id="minutes">00</strong>
+                  <span>MINS</span>
+                </div>
+                <div>
+                  <strong id="seconds">00</strong>
+                  <span>SECS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="primary-action" type="button" id="enterArchive">
+                进入异常档案库
+              </button>
+              <button class="ghost-action" type="button" id="copySignal">
+                复制访问编号
+              </button>
+            </div>
+          </div>
+
+          <aside class="status-panel" aria-label="系统状态">
+            <div class="monitor-card">
+              <span class="dot"></span>
+              <p>SIGNAL PENDING</p>
+              <strong>08</strong>
+              <span>UNRESOLVED ENTRIES</span>
+            </div>
+            <div class="thin-readout">
+              <span>TRACE ID</span>
+              <b id="traceId">GQ-0000-0000</b>
+            </div>
+            <div class="thin-readout">
+              <span>ARCHIVE STATE</span>
+              <b>PRE-LAUNCH</b>
+            </div>
+          </aside>
+        </div>
+
+        <section class="archive-index" aria-label="异常入口索引">
+          <button class="case-row open" type="button" data-entry="001">
+            <span>001</span>
+            <b>好孩子模拟器</b>
+            <em>STATUS: PREVIEW</em>
+          </button>
+          <button class="case-row" type="button" data-entry="002">
+            <span>002</span>
+            <b>画外音监听中</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="003">
+            <span>003</span>
+            <b>上传进度 99%</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="004">
+            <span>004</span>
+            <b>失踪女友求助记录</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="005">
+            <span>005</span>
+            <b>蝶泉中心入营档案</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="006">
+            <span>006</span>
+            <b>未完成的日出剪辑</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="007">
+            <span>007</span>
+            <b>梦境回声采样</b>
+            <em>STATUS: SEALED</em>
+          </button>
+          <button class="case-row" type="button" data-entry="008">
+            <span>008</span>
+            <b>醒梦人观察日志</b>
+            <em>STATUS: SEALED</em>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close aria-label="关闭">×</button>
+        <p class="eyebrow" id="modalKicker">ENTRY 001</p>
+        <h2 id="modalTitle">该异常尚未完成归档</h2>
+        <p id="modalBody">
+          请等待下一次异常同步。当前入口只开放系统预览，不开放完整记录。
+        </p>
+        <button class="primary-action small" type="button" data-close>确认</button>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
