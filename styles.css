@@ -270,11 +270,41 @@ h1 {
   padding: 13px 14px;
 }
 
+.hidden-gateway {
+  position: relative;
+  text-decoration: none;
+  cursor: crosshair;
+}
+
+.hidden-gateway b {
+  color: transparent;
+  background: linear-gradient(90deg, rgba(231, 228, 220, 0.18), rgba(231, 228, 220, 0.72));
+  text-shadow: none;
+}
+
+.hidden-gateway:hover {
+  border-color: rgba(166, 64, 54, 0.48);
+  background: rgba(166, 64, 54, 0.08);
+}
+
+.hidden-gateway:hover b {
+  color: var(--red);
+  background: transparent;
+}
+
 .thin-readout b {
   color: var(--green);
   font-family: "SF Mono", "Roboto Mono", ui-monospace, monospace;
   font-size: 11px;
   font-weight: 400;
+}
+
+.hidden-gateway b {
+  color: transparent;
+}
+
+.hidden-gateway:hover b {
+  color: var(--red);
 }
 
 .archive-index {
