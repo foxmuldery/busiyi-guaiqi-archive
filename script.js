@@ -77,6 +77,17 @@ function closeModal() {
   document.querySelector("#modal").setAttribute("aria-hidden", "true");
 }
 
+function openHiddenGateway(event) {
+  event.preventDefault();
+  const gateway = document.querySelector("#gatewaySequence");
+  gateway.classList.add("is-active");
+  gateway.setAttribute("aria-hidden", "false");
+
+  window.setTimeout(() => {
+    window.location.href = document.querySelector("#hiddenGateway").href;
+  }, 1450);
+}
+
 document.querySelector("#traceId").textContent = createTraceId();
 updateCountdown();
 updateClock();
@@ -104,6 +115,8 @@ document.querySelector("#copySignal").addEventListener("click", async () => {
     openModal("000", "当前访问编号", traceId);
   }
 });
+
+document.querySelector("#hiddenGateway").addEventListener("click", openHiddenGateway);
 
 document.querySelectorAll("[data-close]").forEach((node) => {
   node.addEventListener("click", closeModal);

@@ -76,7 +76,12 @@
               <span>ARCHIVE STATE</span>
               <b>PRE-LAUNCH</b>
             </div>
-            <a class="thin-readout hidden-gateway" href="./zelun.html" aria-label="打开被遮蔽的来源档案">
+            <a
+              class="thin-readout hidden-gateway"
+              id="hiddenGateway"
+              href="./zelun.html"
+              aria-label="打开被遮蔽的来源档案"
+            >
               <span>ORIGIN TRACE</span>
               <b>REDACTED</b>
             </a>
@@ -139,6 +144,14 @@
         </p>
         <button class="primary-action small" type="button" data-close>确认</button>
       </section>
+    </div>
+
+    <div class="gateway-sequence" id="gatewaySequence" aria-hidden="true">
+      <div class="gateway-frame">
+        <span>UNLISTED NODE</span>
+        <b>SOURCE TRACE RECOVERING</b>
+        <em>校验残片：0127 / 连接镜像：不稳定 / 访问记录：已写入</em>
+      </div>
     </div>
 
     <script src="./script.js"></script>
