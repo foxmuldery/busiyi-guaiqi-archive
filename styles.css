@@ -272,24 +272,56 @@ h1 {
 
 .hidden-gateway {
   position: relative;
+  overflow: hidden;
+  opacity: 0.58;
   text-decoration: none;
   cursor: crosshair;
+  isolation: isolate;
+  transition: opacity 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
-.hidden-gateway b {
-  color: transparent;
-  background: linear-gradient(90deg, rgba(231, 228, 220, 0.18), rgba(231, 228, 220, 0.72));
-  text-shadow: none;
+.hidden-gateway::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-105%);
+  background: linear-gradient(90deg, transparent, rgba(166, 64, 54, 0.22), transparent);
+  transition: transform 620ms ease;
+}
+
+.hidden-gateway::after {
+  content: "SOURCE NOT DECLARED";
+  position: absolute;
+  right: 14px;
+  bottom: 3px;
+  color: rgba(166, 64, 54, 0);
+  font-family: "SF Mono", "Roboto Mono", ui-monospace, monospace;
+  font-size: 8px;
+  transition: color 180ms ease;
+}
+
+.hidden-gateway span {
+  color: rgba(231, 228, 220, 0.28);
 }
 
 .hidden-gateway:hover {
-  border-color: rgba(166, 64, 54, 0.48);
-  background: rgba(166, 64, 54, 0.08);
+  opacity: 1;
+  border-color: rgba(166, 64, 54, 0.64);
+  background: rgba(166, 64, 54, 0.075);
+  box-shadow: inset 0 0 0 1px rgba(166, 64, 54, 0.13);
 }
 
-.hidden-gateway:hover b {
-  color: var(--red);
-  background: transparent;
+.hidden-gateway:hover::before {
+  transform: translateX(105%);
+}
+
+.hidden-gateway:hover::after {
+  color: rgba(166, 64, 54, 0.82);
+}
+
+.hidden-gateway:hover span {
+  color: rgba(231, 228, 220, 0.72);
 }
 
 .thin-readout b {
@@ -301,10 +333,15 @@ h1 {
 
 .hidden-gateway b {
   color: transparent;
+  position: relative;
+  background: linear-gradient(90deg, rgba(231, 228, 220, 0.16), rgba(231, 228, 220, 0.64));
+  text-shadow: none;
 }
 
 .hidden-gateway:hover b {
   color: var(--red);
+  background: transparent;
+  text-shadow: 0 0 14px rgba(166, 64, 54, 0.42);
 }
 
 .archive-index {
